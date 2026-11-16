@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build notes</title>
+<style>
+  :root {
+    --page: #f6f7f9;
+    --card: #ffffff;
+    --ink: #1a1c1f;
+    --muted: #5d636f;
+    --line: #e4e5e9;
+    --accent: #0a6a94;
+    --warn: #a4470a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page: #16181c;
+      --card: #1e2127;
+      --ink: #eceef2;
+      --muted: #a2a9b6;
+      --line: #2e323a;
+      --accent: #58b5dc;
+      --warn: #e2a06a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page: #16181c;
+    --card: #1e2127;
+    --ink: #eceef2;
+    --muted: #a2a9b6;
+    --line: #2e323a;
+    --accent: #58b5dc;
+    --warn: #e2a06a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 16px 56px;
+    background: var(--page);
+    color: var(--ink);
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  header { padding: 32px 0 20px; }
+  h1 { margin: 0; font-size: 1.45rem; letter-spacing: -0.01em; }
+  header p { margin: 6px 0 0; color: var(--muted); font-size: 0.95rem; }
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 18px 20px;
+    margin: 0 0 16px;
+  }
+  .buildhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  h2 { margin: 0; font-size: 1.15rem; }
+  h3 {
+    margin: 18px 0 6px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+  h3.warn { color: var(--warn); }
+  .badge {
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+  .meta { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin: 0 0 7px; }
+  li:last-child { margin-bottom: 0; }
+  .status ul { list-style: none; padding: 0; }
+  .status li { padding-left: 18px; position: relative; }
+  .status li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.58em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .status .bad li::before { background: var(--warn); }
+  footer { color: var(--muted); font-size: 0.85rem; text-align: center; padding-top: 8px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Build notes</h1>
+      <p>Samsung Galaxy A8 2018 &middot; LineageOS 24, Android 17, unofficial</p>
+    </header>
+
+    <section class="status">
+      <h3>Working on the phone</h3>
+      <ul>
+          <li>Camera, photos and video</li>
+          <li>Satellite positioning, about 37 seconds from cold at a window</li>
+          <li>Fingerprint reader</li>
+          <li>Bluetooth, calls, text messages, tap to pay</li>
+          <li>Temperature monitoring</li>
+      </ul>
+      <h3 class="warn">Not working</h3>
+      <ul class="bad">
+          <li>Microphone. A hardware fault, proven by the second microphone starting instantly through the identical path. Not fixable in software.</li>
+          <li>Calls over 4G. Never set up on this port, a large job, left alone for now.</li>
+      </ul>
+    </section>
+
+      <section class="build">
+        <div class="buildhead">
+          <h2>v30debug</h2>
+          <span class="badge">Newest</span>
+        </div>
+        <p class="meta">16 November 2026 &middot; 1.08 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>Google apps should now survive an update. The part that saves them before the system is replaced could not write to the system partition, so it quietly saved nothing. It now writes, records each step, and says so loudly if it cannot.</li>
+          <li>Removed the satellite assistance setting added in the last build. It configured a path this chip does not use, so it did nothing.</li>
+          <li>The kernel now carries its own name, Eureka-monsiu.</li>
+          <li>Temperature service included and labelled properly.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Temperature readings confirmed correct on the phone: thresholds now read as proper degrees rather than thousands, and the sensors report sensible values.</li>
+          <li>The save-and-restore fix was confirmed present in the package, but see below: it never runs.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>Google apps are still not kept across an update, and the reason is now known: the installer never runs the part that saves them. It is included in the package but never called. Being fixed in the next build. Until then, reflash NikGapps after every update, which takes about a minute and restores everything.</li>
+          <li>Installing from inside Android still fails before it starts, showing the robot and an error. Nothing is damaged and the phone returns to the previous build. The cause has been traced to one step that prepares the file for the installer. Installing over the cable works.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v29debug</h2>
+        </div>
+        <p class="meta">16 November 2026 &middot; 1.08 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>The Updates app now looks here for new builds instead of the official LineageOS site, which has no record of this phone.</li>
+          <li>Temperature readings corrected. They were being reported a thousand times too large, so the system could not tell how warm the phone was.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Confirmed on the phone: it finds and offers newer builds from here, which is what this build was for.</li>
+        </ul>
+      </section>
+
+    <footer>Newest build first. Only what was actually checked is listed as checked.</footer>
+  </div>
+</body>
+</html>
