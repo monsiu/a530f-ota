@@ -120,8 +120,49 @@
 
       <section class="build">
         <div class="buildhead">
-          <h2>v31debug</h2>
+          <h2>v33debug</h2>
           <span class="badge">Newest</span>
+        </div>
+        <p class="meta">17 November 2026 &middot; 1.08 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>Double tap to wake now has a real switch: Settings, Display, Tap to wake. The last build carried the feature but there was no working way to turn it on.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Nothing on the phone yet. This build had not been installed when these notes were written.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>Double tap to wake is unproven. Two things are unknown: whether the whole screen responds or only part of it, and whether the screen has to go off twice before it starts working. Both are being measured.</li>
+          <li>Leaving double tap to wake on keeps the touch screen listening while the screen is off, so it may cost battery. Not measured yet.</li>
+          <li>The Recent changes button still opens this page in a browser. A version that shows it inside the app is written but did not make this build.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v32debug</h2>
+        </div>
+        <p class="meta">17 November 2026 &middot; 1.08 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>The Wi-Fi IPv6 setting now works. The previous build's attempt was undone by Android a moment after it was applied, as the phone finished joining a network. The part of the system that has the last word now holds the setting instead.</li>
+          <li>A charging limit, so the battery can be kept short of full. Settings, Battery.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Updating from the phone itself, the whole way through. That is what this build was for, and it worked.</li>
+          <li>The Wi-Fi IPv6 setting was confirmed to hold through leaving a network and rejoining it, which is exactly where the previous attempt failed.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>The charging limit was not tested on the phone for this build.</li>
+          <li>Double tap to wake is in this build but does not work. The hidden setting meant to switch it on was discarded as the phone started up, so nothing ever armed it. The next build replaces it with a proper switch in Settings, Display.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v31debug</h2>
         </div>
         <p class="meta">17 November 2026 &middot; 1.08 GB</p>
         <h3>What changed</h3>
