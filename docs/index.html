@@ -104,6 +104,7 @@
     <section class="status">
       <h3>Working on the phone</h3>
       <ul>
+          <li>Updates install from the phone itself, and keep the Google apps</li>
           <li>Camera, photos and video</li>
           <li>Satellite positioning, about 37 seconds from cold at a window</li>
           <li>Fingerprint reader</li>
@@ -119,8 +120,35 @@
 
       <section class="build">
         <div class="buildhead">
-          <h2>v30debug</h2>
+          <h2>v31debug</h2>
           <span class="badge">Newest</span>
+        </div>
+        <p class="meta">17 November 2026 &middot; 1.08 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>Google apps now stay through an update. You no longer need to reinstall NikGapps every time.</li>
+          <li>Updates can now be installed from the phone itself. The step that gets the file ready was reading a success as a failure and stopping there.</li>
+          <li>Choosing an update file already on the phone no longer copies only part of it.</li>
+          <li>Updates can be downloaded from a plain web address, not only a secure one, so a build can be served from a laptop.</li>
+          <li>New Recent changes button on the updates screen. It opens this page.</li>
+          <li>A setting to turn IPv6 off on Wi-Fi, for networks where it makes downloads very slow. Please read the note below before using it.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Installed two ways on the phone, over the cable and then from the phone itself. Both finished with no errors, and the Google apps were still in place afterwards both times.</li>
+          <li>Photos from the back and the front camera, both full size and correct.</li>
+          <li>Movement and position sensors, and temperature readings.</li>
+          <li>The microphone still records, with the same fault at the start of a recording as before.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>The Wi-Fi IPv6 setting does not work yet. Android turns IPv6 back on as it finishes joining a network, which undoes the setting a moment after it is applied. It is being fixed properly in the next build. Until then, the setting has no effect.</li>
+          <li>Satellite positioning was not retested outdoors for this build. Nothing was changed that should affect it.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v30debug</h2>
         </div>
         <p class="meta">16 November 2026 &middot; 1.08 GB</p>
         <h3>What changed</h3>
