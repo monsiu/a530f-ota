@@ -120,8 +120,30 @@
 
       <section class="build">
         <div class="buildhead">
-          <h2>v33debug</h2>
+          <h2>v34release</h2>
           <span class="badge">Newest</span>
+        </div>
+        <p class="meta">19 November 2026 &middot; 1.07 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>Switches to the Android user build with production ADB defaults and owner-signed recovery.</li>
+          <li>The Updates app on this build uses the Local update picker.</li>
+          <li>Adds a one-time Charge to 100% override, per-network IPv6 settings, and AudioFX profiles for each output.</li>
+          <li>Adds the Midnight lock-screen and nightstand clocks and an optional fingerprint swipe-up shortcut for the next track.</li>
+          <li>Fixes touchscreen command ownership so the tap-to-wake switch can arm the driver.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Passed the host signing checks. The OTA certificate matches v33debug, and the ZIP checksum matches the signing manifest.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>The first in-place upgrade from v33debug and the first boot of v34release are pending device validation. Back up your data before installing.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v33debug</h2>
         </div>
         <p class="meta">17 November 2026 &middot; 1.08 GB</p>
         <h3>What changed</h3>
