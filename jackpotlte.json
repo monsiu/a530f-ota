@@ -1,16 +1,16 @@
 [
   {
-    "datetime": 1795079270,
+    "datetime": 1795167472,
     "version": "24.0",
     "type": "UNOFFICIAL",
     "files": [
       {
-        "filename": "lineage-24.0-20261119-UNOFFICIAL-jackpotlte-owner-v34release-signed.zip",
-        "sha256": "c12cb63e7901a0850091ec33be14b0566a0c725f2e0da12d850a884df403681f",
-        "size": 1068200322,
+        "filename": "lineage-24.0-20261120-UNOFFICIAL-jackpotlte-owner-v35release-signed.zip",
+        "sha256": "9543264f9742d97ec7ec8c882eee2e86aa5b015a4d69ba375c2a99f297fc6c20",
+        "size": 1068619369,
         "os_sdk_level": 37,
         "ota_property_files": "metadata:69:342,metadata.pb:479:228",
-        "url": "https://github.com/monsiu/a530f-ota/releases/download/v34release/lineage-24.0-20261119-UNOFFICIAL-jackpotlte-owner-v34release-signed.zip"
+        "url": "https://github.com/monsiu/a530f-ota/releases/download/v35release/lineage-24.0-20261120-UNOFFICIAL-jackpotlte-owner-v35release-signed.zip"
       }
     ]
   }
