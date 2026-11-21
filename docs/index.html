@@ -120,8 +120,31 @@
 
       <section class="build">
         <div class="buildhead">
-          <h2>v36release</h2>
+          <h2>v37release</h2>
           <span class="badge">Newest</span>
+        </div>
+        <p class="meta">21 November 2026 &middot; 1.07 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>The Updates app can look for a new build online again. On the previous build a device setting held it to installing a file you pick by hand, so the Check for updates button was missing, and that could not be undone on a phone already running it.</li>
+          <li>Installing an update from a file no longer stops when the screen turns off. Before, the screen going dark cancelled the copy part way through and deleted the half-copied file.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Both parts of the Updates app in the signed package carry the corrected setting. The check reads the value built into the app rather than looking for its name, and it was tried first against the previous build, which it correctly rejects.</li>
+          <li>All seventeen package checks passed, on the unsigned package and again on the signed one. The whole-package signature verified, the update certificate matches the one the recovery trusts, and both trust lists hold only the owner certificate.</li>
+          <li>The new files were compared against the previous build: of 8,048 files that held content before, not one is empty now.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>Not yet installed on a phone, so first boot is unverified.</li>
+          <li>The screen-off correction takes code away rather than adding any, so no package check can prove it. It needs a real install from a file with the screen left to go dark.</li>
+          <li>Looking for updates online has never been exercised on a build of this kind, because the previous one could not offer the button. The checks prove the button is no longer held back, not that the connection to the download page works.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v36release</h2>
         </div>
         <p class="meta">20 November 2026 &middot; 1.07 GB</p>
         <h3>What changed</h3>
