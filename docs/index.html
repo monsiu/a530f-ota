@@ -120,8 +120,29 @@
 
       <section class="build">
         <div class="buildhead">
-          <h2>v35release</h2>
+          <h2>v36release</h2>
           <span class="badge">Newest</span>
+        </div>
+        <p class="meta">20 November 2026 &middot; 1.07 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>Adds the required Settings day/night privileged-permission allowlist entry, correcting the first-boot failure in the withdrawn v35 package.</li>
+          <li>Corrects Crypto Desk coin-logo scaling, centering and brand detail, with larger vector favorite controls in app 1.6.2.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>The matching one-permission repair completed boot on the A8 with SELinux Enforcing and a stable system_server. The newly packaged v36 still needs its own handset validation.</li>
+          <li>Host source rendering and geometry checks pass for 13 bundled logos and both star states. New APK compilation and phone visual/favorite checks remain pending.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>This is a corrected successor to withdrawn v35. Full build, owner signing and package checks must pass before automatic publication.</li>
+          <li>Automatic recovery replacement remains unverified; the missing recovery-update tools/service need separate follow-through.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v35release</h2>
         </div>
         <p class="meta">20 November 2026 &middot; 1.07 GB</p>
         <h3>What changed</h3>
