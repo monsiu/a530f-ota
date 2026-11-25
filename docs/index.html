@@ -120,8 +120,30 @@
 
       <section class="build">
         <div class="buildhead">
-          <h2>v37release</h2>
+          <h2>v38release</h2>
           <span class="badge">Newest</span>
+        </div>
+        <p class="meta">24 November 2026 &middot; 1.07 GB</p>
+        <h3>What changed</h3>
+        <ul>
+          <li>Putting software on the phone from a computer works again when the phone will not start. The rescue screen still offered it, but on the last three builds the computer could not see the phone at all, so a phone that would not start could not be rescued. Two lines had gone missing from the settings for the USB connection: the name of the connection itself, and the step that switches it on once it has been set up. Both are back.</li>
+        </ul>
+        <h3>What was checked</h3>
+        <ul>
+          <li>Both missing lines are back in the source and committed, and a new check now refuses to sign a build without them, so the only way of rescuing a phone that will not start cannot quietly disappear again.</li>
+          <li>The rescue part of this package was rebuilt rather than reused. An old copy left behind in the build folder is what hid the fault for days, so it was cleared before building and both source files were added to the freshness list, which refuses a build older than the fix.</li>
+        </ul>
+        <h3 class="warn">Worth knowing</h3>
+        <ul>
+          <li>Not yet installed on a phone, so first boot is unverified.</li>
+          <li>Being able to put software on the phone from a computer cannot be proven by checks on the package alone. It needs a real attempt from the rescue screen with the phone plugged in.</li>
+          <li>The Google apps did not survive the previous update: afterwards the phone held only one of the eleven scripts that preserve them. Once they are gone no later update can bring them back on its own. On this update, install the Google apps package once straight after, then check them before anything else is done to the phone.</li>
+          <li>This update replaces the system, so it is also the first real test of whether the Google apps survive an update now that the scripts that preserve them are back.</li>
+        </ul>
+      </section>
+      <section class="build">
+        <div class="buildhead">
+          <h2>v37release</h2>
         </div>
         <p class="meta">21 November 2026 &middot; 1.07 GB</p>
         <h3>What changed</h3>
